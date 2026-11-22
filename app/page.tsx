@@ -40,7 +40,7 @@ export default function HomePage() {
     const finish = window.setTimeout(() => {
       setIntroVisible(false);
       sessionStorage.setItem("callyrose-intro-seen", "yes");
-    }, 4300);
+    }, 5400);
     return () => {
       window.clearTimeout(timer);
       window.clearTimeout(finish);
@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="intro-content">
             <span className="intro-sprig">❧</span>
             <p className="intro-kicker">A softer way to live</p>
-            <div className="intro-wordmark">CALLYROSE</div>
+            <div className="intro-wordmark" aria-label="CALLYROSE">{Array.from("CALLYROSE").map((letter, index) => <span key={index} style={{ animationDelay: `${1.05 + index * 0.17}s` }}>{letter}</span>)}</div>
             <p className="intro-motto">Live Comfortably. Sleep Beautifully.</p>
           </div>
         </div>
