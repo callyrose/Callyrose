@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 
+// GitHub Pages is a static host. Product detail pages will be generated
+// when verified catalogue slugs are added to this list.
+export function generateStaticParams() {
+  return [];
+}
+
+export const dynamicParams = false;
+
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const readableName = decodeURIComponent(slug).replace(/[-_]/g, " ");
