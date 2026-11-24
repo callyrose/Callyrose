@@ -26,6 +26,7 @@ jobs:
           cp index.html _site/index.html
           cp signup.html _site/signup.html
           cp login.html _site/login.html
+          cp dashboard.html _site/dashboard.html
           cp forgot-password.html _site/forgot-password.html
           cp terms.html _site/terms.html
           cp privacy.html _site/privacy.html
