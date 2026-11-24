@@ -126,6 +126,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 });
 
 const form = document.getElementById("signupForm");
+const categoryFromLink = new URLSearchParams(location.search).get("category");
+supabase.auth.getSession().then(({data}) => { if (data.session) { const target = new URL("./dashboard.html", location.href); if (["mattresses", "bedframes", "chairs"].includes(categoryFromLink)) target.searchParams.set("category", categoryFromLink); location.replace(target.toString()); } });
 const button = document.getElementById("submitButton");
 const buttonText = document.getElementById("buttonText");
 const message = document.getElementById("formMessage");
@@ -203,13 +205,16 @@ form.addEventListener("submit", async (event) => {
     if (error) throw error;
 
     if (data.session) {
-      showMessage("Your CALLYROSE account has been created. Welcome — your account is ready. The customer dashboard will be the next step.", "success");
-      buttonText.textContent = "Account created";
-      form.reset();
+      showMessage("Your CALLYROSE account is ready. Taking you to My CALLYROSE…", "success");
+      buttonText.textContent = "Opening My CALLYROSE…";
+      const category = new URLSearchParams(location.search).get("category");
+      const destination = new URL("./dashboard.html", location.href);
+      if (["mattresses", "bedframes", "chairs"].includes(category)) destination.searchParams.set("category", category);
+      window.location.replace(destination.toString());
       return;
     }
 
-    showMessage("Your details were accepted, but Supabase is still requiring email confirmation. Once you switch off Confirm Email in Supabase, new customers will be signed in immediately without a code.", "info");
+    showMessage("Your account details have been submitted. Please check your email to complete verification, then sign in to continue to My CALLYROSE.", "info");
   } catch (error) {
     const text = error?.message || "We couldn't create your account just now. Please try again.";
     showMessage(text, "error");
