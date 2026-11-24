@@ -25,6 +25,10 @@ jobs:
           mkdir _site
           cp index.html _site/index.html
           cp signup.html _site/signup.html
+          cp login.html _site/login.html
+          cp forgot-password.html _site/forgot-password.html
+          cp terms.html _site/terms.html
+          cp privacy.html _site/privacy.html
           if [ -d Assets ]; then cp -R Assets _site/Assets; fi
           if [ -d assets ]; then cp -R assets _site/assets; fi
           if [ -d images ]; then cp -R images _site/images; fi
