@@ -29,6 +29,7 @@ jobs:
           cp dashboard.html _site/dashboard.html
           cp product.html _site/product.html
           cp orders.html _site/orders.html
+          cp dispatch.html _site/dispatch.html
           cp rider.html _site/rider.html
           cp profile.html _site/profile.html
           cp transactions.html _site/transactions.html
