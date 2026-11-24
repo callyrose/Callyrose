@@ -8,7 +8,7 @@
 :root{--ink:#29211e;--rose:#b97870;--paper:#fffdfa;--cream:#f5eee8;--line:#e9ddd4;--muted:#786c65}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;display:grid;place-items:center;padding:22px}.card{width:min(100%,560px);background:var(--paper);border:1px solid var(--line);padding:clamp(24px,6vw,48px);text-align:center}.brand{font:25px 'Playfair Display';letter-spacing:2px}.brand span{color:var(--rose)}.eyebrow{margin-top:38px;color:var(--rose);font-size:10px;letter-spacing:2px;text-transform:uppercase}h1{font:34px 'Playfair Display';margin:10px 0}.message{font-size:13px;line-height:1.8;color:var(--muted)}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;padding:13px 18px;background:var(--ink);color:white;text-decoration:none;font-size:10px;letter-spacing:1px;text-transform:uppercase}.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}.error{color:#a34f48}
 </style>
 </head>
-<body><main class="card"><a class="brand" href="index.html">CALLY<span>ROSE</span></a><div class="eyebrow">Secure payment</div><h1 id="heading">Checking your payment</h1><p class="message" id="message">Please wait while we confirm your payment securely with Paystack. Do not close this page.</p><div class="actions" id="actions"></div></main>
+<body><main class="card"><a class="brand" href="index.html">CALLY<span>ROSE</span></a><div class="eyebrow">Secure payment</div><h1 id="heading">Checking your payment</h1><p class="message" id="message">Please wait while CALLYROSE confirms your payment securely. Do not close this page.</p><div class="actions" id="actions"></div></main>
 <script type="module">
 import{createClient}from"https://esm.sh/@supabase/supabase-js@2.119.0";
 const db=createClient("https://syyvxrxzejfgqjybrnay.supabase.co","sb_publishable_RcRmuAzksTmt8SJX895v3Q_iP6zGrNM",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
@@ -20,7 +20,7 @@ async function run(){
  if(!session){$("heading").textContent="Sign in to confirm";$("message").textContent="Your payment reference is saved in this page. Sign in to let CALLYROSE verify it securely."; $("actions").innerHTML='<a class="btn" href="login.html?returnTo='+encodeURIComponent("payment-callback.html?reference="+reference)+'">Sign in</a>';return;}
  const{data,error}=await db.functions.invoke("paystack-verify",{body:{reference}});
  if(error||!data?.success){$("heading").textContent="Payment is being checked";$("message").className="message error";$("message").textContent=data?.error||error?.message||"We could not confirm the payment just yet. If you completed payment, do not pay again. Check your orders or contact CALLYROSE support.";links();return;}
- $("heading").textContent="Payment confirmed";$("message").className="message";$("message").textContent="Your Paystack payment has been verified successfully. Your CALLYROSE order is now marked as payment confirmed. Thank you for shopping with us.";links();
+ $("heading").textContent="Payment confirmed";$("message").className="message";$("message").textContent="Your payment has been verified successfully. Your CALLYROSE order is now marked as payment confirmed. Thank you for shopping with us.";links();
 }
 run();
 </script></body></html>
