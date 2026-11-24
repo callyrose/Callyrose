@@ -44,7 +44,7 @@
 .password-wrap{position:relative}.password-wrap input{padding-right:65px}.show-password{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--rose);font-size:9px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;padding:6px}
 .password-hint{font-size:9px;color:#96877e;margin-top:-7px}
 .terms{display:flex;align-items:flex-start;gap:10px;margin:19px 0 18px;font-size:10px;line-height:1.7;color:var(--muted)}
-.terms input{width:14px;height:14px;margin:2px 0 0;accent-color:var(--rose);flex:none}.terms a{color:var(--rose);text-decoration:underline;text-underline-offset:3px}
+.terms input{width:15px;height:15px;margin:2px 0 0;accent-color:var(--rose);flex:none}.terms a{color:var(--rose);text-decoration:underline;text-underline-offset:3px;font-weight:600}.terms a:hover{color:var(--ink)}.legal-note{font-size:9px;color:#988980;line-height:1.7;margin:-5px 0 17px 25px}.strength{height:3px;background:#eee5de;margin-top:7px;overflow:hidden}.strength span{display:block;height:100%;width:0;background:#b97870;transition:width .25s,background .25s}.strength-label{font-size:8px;color:#988980;margin-top:5px;letter-spacing:.4px}
 .submit{width:100%;height:52px;border:1px solid var(--ink);background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:15px;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
 .submit:hover{background:var(--rose);border-color:var(--rose);transform:translateY(-2px)}.submit:disabled{opacity:.65;cursor:wait;transform:none}
 .message{display:none;margin-top:15px;padding:13px 15px;font-size:10px;line-height:1.7;border-left:2px solid var(--rose);background:#f7efea;color:#65544b}.message.show{display:block}.message.error{border-color:#b94a48;background:#fbefed;color:#8b302e}.message.success{border-color:#7b967b;background:#eef4ed;color:#405b40}
@@ -106,8 +106,8 @@
             <div class="password-wrap"><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter it again" minlength="8" required><button class="show-password" type="button" data-target="confirmPassword">Show</button></div>
           </div>
         </div>
-        <div class="password-hint">Use at least 8 characters for a stronger password.</div>
-        <label class="terms"><input id="terms" type="checkbox" required><span>I agree to the CALLYROSE terms and understand that my account details will be used to manage my shopping experience.</span></label>
+        <div class="password-hint">Use at least 8 characters for a stronger password.</div><div class="strength" aria-hidden="true"><span id="strengthBar"></span></div><div class="strength-label" id="strengthLabel">Password strength</div>
+        <label class="terms"><input id="terms" type="checkbox" required><span>I have read and agree to the <a href="./terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and acknowledge the <a href="./privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label><p class="legal-note">Your privacy matters. We use your details to create and manage your CALLYROSE account and orders.</p>
         <button class="submit" id="submitButton" type="submit"><span id="buttonText">Create my account</span><span aria-hidden="true">↗</span></button>
         <div class="message" id="formMessage" role="status" aria-live="polite"></div>
       </form>
@@ -128,7 +128,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 const form = document.getElementById("signupForm");
 const button = document.getElementById("submitButton");
 const buttonText = document.getElementById("buttonText");
-const message = document.getElementById("formMessage");
+const message = document.getElementById("formMessage");\nconst strengthBar = document.getElementById("strengthBar");\nconst strengthLabel = document.getElementById("strengthLabel");\nconst passwordInput = document.getElementById("password");\npasswordInput.addEventListener("input", () => {\n  const value = passwordInput.value;\n  let score = 0;\n  if (value.length >= 8) score++;\n  if (value.length >= 12) score++;\n  if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;\n  if (/\\d/.test(value)) score++;\n  if (/[^A-Za-z0-9]/.test(value)) score++;\n  const labels = ["Password strength", "Weak password", "Fair password", "Good password", "Strong password", "Excellent password"];\n  strengthBar.style.width = (score * 20) + "%";\n  strengthBar.style.background = score < 2 ? "#b94a48" : score < 4 ? "#c8a47c" : "#6f9275";\n  strengthLabel.textContent = labels[score];\n});
 
 function showMessage(text, type = "info") {
   message.textContent = text;
