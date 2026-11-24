@@ -138,7 +138,7 @@ passwordInput.addEventListener("input", () => {
   if (value.length >= 8) score++;
   if (value.length >= 12) score++;
   if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;
-  if (/\\d/.test(value)) score++;
+  if (/[0-9]/.test(value)) score++;
   if (/[^A-Za-z0-9]/.test(value)) score++;
   const labels = ["Password strength", "Weak password", "Fair password", "Good password", "Strong password", "Excellent password"];
   strengthBar.style.width = (score * 20) + "%";
