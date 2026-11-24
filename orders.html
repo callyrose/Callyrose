@@ -9,7 +9,7 @@
 :root{--ink:#29211e;--muted:#786c65;--rose:#b97870;--cream:#f5eee8;--paper:#fffdfa;--line:#e9ddd4;--gold:#c8a47c}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
 .top{height:72px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,70px)}
-.brand{font:500 24px 'Playfair Display',serif;letter-spacing:2.5px}.brand span{color:var(--rose)}.back{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.brand{font:500 24px 'Playfair Display',serif;letter-spacing:2.5px}.brand span{color:var(--rose)}.back{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border:1px solid var(--line);border-radius:3px;background:#fff;font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);white-space:nowrap}.back:hover{border-color:var(--rose);color:var(--rose)}
 main{max-width:1050px;margin:auto;padding:42px 20px 80px}.eyebrow{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);font-weight:700}
 h1{font:400 clamp(36px,5vw,52px) 'Playfair Display',serif;margin:9px 0}.sub{font-size:12px;color:var(--muted);margin:0 0 28px}
 .toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid var(--line);background:var(--paper);padding:10px 14px;font-size:10px;color:var(--muted)}.filter.active{background:var(--ink);color:white;border-color:var(--ink)}
@@ -26,7 +26,7 @@ h1{font:400 clamp(36px,5vw,52px) 'Playfair Display',serif;margin:9px 0}.sub{font
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
-<header class="top"><a class="brand" href="dashboard.html">CALLY<span>ROSE</span></a><nav style="display:flex;gap:16px"><a class="back" href="cart.html">My cart</a><a class="back" href="dashboard.html">← Back to shop</a></nav></header>
+<header class="top"><a class="brand" href="dashboard.html">CALLY<span>ROSE</span></a><nav style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><a class="back" href="cart.html">My cart</a><a class="back" href="transactions.html">Transactions</a><a class="back" href="saved.html">Saved items</a><a class="back" href="dashboard.html">Shop</a></nav></header>
 <main>
 <div class="eyebrow">Your account</div><h1>My Orders</h1><p class="sub">Keep track of your purchases and delivery progress.</p>
 <div class="toolbar" id="filters"><button class="filter active" data-filter="all">All orders</button><button class="filter" data-filter="pending_payment">Pending payment</button><button class="filter" data-filter="processing">Processing</button><button class="filter" data-filter="completed">Completed</button></div>
