@@ -56,6 +56,47 @@ footer{background:#302521;color:#f9eee5;padding:42px clamp(22px,7vw,100px);displ
 .collections .collection-progress,.collections .collection-count{display:none!important}
 @media(max-width:1000px){.collections .collection{height:370px}.collections .collection-label{padding:25px 21px}.collections .collection-label p{font-size:12px}}
 @media(max-width:600px){.collections .collection{height:340px}.collections .collection-label{padding:25px 22px}.collections .collection-label h3{font-size:32px}.collections .collection-label small{font-size:9px}.collections .collection-label p{font-size:12px}}
+
+/* CALLYROSE brand-stage refinement */
+.trust{gap:clamp(18px,7vw,105px);padding:28px 18px;color:#66564e;font-size:10px;letter-spacing:1.15px}
+.trust span{position:relative;padding-left:17px}
+.trust span:before{content:"✦";position:absolute;left:0;top:0;color:var(--rose);font-size:10px}
+.collections .collection{border-radius:3px;min-height:420px}
+.collections .collection-label{padding:27px 25px 25px}
+.collections .collection-label h3{margin-bottom:8px}
+.collections .collection-label p{max-width:285px;min-height:42px}
+.collection-cta{display:inline-flex;align-items:center;gap:17px;margin-top:17px;padding:10px 13px;border:1px solid #fff9;color:#fff;font-size:9px;letter-spacing:1.7px;text-transform:uppercase;transition:background .3s,border-color .3s}
+.collection-cta b{font-size:14px;font-weight:400}
+.collection:hover .collection-cta{background:#fff;color:var(--ink);border-color:#fff}
+.story{padding-top:105px;padding-bottom:105px}
+.story-inner{max-width:760px;margin:0 auto}
+.story h2{margin-bottom:28px}
+.story-inner p{max-width:650px;margin:0 auto 17px;font-size:13px;line-height:2.05;color:#6f625b}
+.story-button{margin-top:17px}
+.why{background:#fffdfa}
+.benefits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1180px;margin:0 auto}
+.benefit{min-height:210px;padding:26px 22px;background:#f6efe9;border:1px solid #eee2d9;transition:transform .4s,box-shadow .4s}
+.benefit:hover{transform:translateY(-7px);box-shadow:0 18px 38px #39261c12}
+.benefit-number{font-size:9px;letter-spacing:2px;color:var(--rose)}
+.benefit h3{font:400 23px/1.2 'Playfair Display',serif;margin:27px 0 10px}
+.benefit p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.closing{padding:100px 24px;background:linear-gradient(120deg,#e9d9ce,#f4eae2 58%,#dfc6b8);text-align:center;position:relative;overflow:hidden}
+.closing:before,.closing:after{content:"";position:absolute;width:320px;height:320px;border:1px solid #b9787030;border-radius:50%;pointer-events:none}
+.closing:before{left:-150px;top:-160px}.closing:after{right:-140px;bottom:-190px}
+.closing-inner{position:relative;z-index:1;max-width:620px;margin:0 auto}
+.closing h2{font:400 clamp(42px,6vw,70px)/1.05 'Playfair Display',serif;margin:18px 0}
+.closing h2 em{color:var(--rose);font-weight:400}
+.closing p{max-width:440px;margin:0 auto;color:#76675f;font-size:12px;line-height:1.9}
+.closing-button{margin-top:27px}
+footer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px;padding-top:42px;padding-bottom:35px}
+.footer-main .brand{display:inline-flex}
+.footer-main p{font-size:10px;color:#d4c1b4;letter-spacing:.5px;margin:12px 0 0}
+.footer-links{display:flex;gap:25px;flex-wrap:wrap;font-size:9px;letter-spacing:1.3px;text-transform:uppercase;color:#f5e7dc}
+.footer-links a:hover,footer a:hover{color:#d9ad9b}
+.footer-meta{grid-column:1/-1;border-top:1px solid #ffffff25;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:850px){.benefits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.trust{gap:12px 18px;padding:20px 16px}.trust span{font-size:8px}.collections .collection{min-height:340px}.benefits{grid-template-columns:1fr 1fr;gap:10px}.benefit{min-height:190px;padding:20px 16px}.benefit h3{font-size:20px;margin-top:22px}.story{padding:72px 22px}.story-inner p{font-size:12px}.closing{padding:75px 22px}footer{grid-template-columns:1fr;gap:25px}.footer-links{gap:17px}.footer-meta{grid-column:1;flex-direction:column;gap:10px}}
+
 </style>
 </head>
 <body>
@@ -63,7 +104,7 @@ footer{background:#302521;color:#f9eee5;padding:42px clamp(22px,7vw,100px);displ
 <header><a class="brand" href="./" aria-label="CALLYROSE home"><span class="brand-mark">C</span><span class="brand-word">CALLY<span>ROSE</span></span></a><nav aria-label="Main navigation"><a href="#collections">Collections</a><a href="#sizes">Mattress sizes</a><a href="#story">Our story</a></nav><div class="nav-actions"><a class="nav-login" href="./login.html">Sign in</a><a class="nav-signup" href="./signup.html">Join CALLYROSE <span aria-hidden="true">↗</span></a></div></header>
 <main>
 <section class="hero">
-<div class="hero-copy"><div class="eyebrow">The art of feeling at home</div><h1>Fall into<br><em>comfort.</em><br>Wake up to life.</h1><p>Thoughtful bedroom comfort and beautiful home furnishings, brought together to make every day feel a little more like home.</p><div class="actions"><a class="button" href="#collections">Explore collections <span aria-hidden="true">↗</span></a><a class="underlink" href="#story">Discover CALLYROSE</a></div></div>
+<div class="hero-copy"><div class="eyebrow">The art of feeling at home</div><h1>Fall into<br><em>comfort.</em><br>Wake up to life.</h1><p>Thoughtful bedroom comfort and beautiful home furnishings, brought together to make every day feel a little more like home.</p><div class="actions"><a class="button" href="#collections">Explore collections <span aria-hidden="true">↗</span></a><a class="underlink" href="#story">Discover our story</a></div></div>
 <div class="hero-stage" aria-label="A moving editorial showcase of elegant bedroom and home interiors">
 <div class="stage-halo"></div><div class="orbit"></div>
 <div class="scene"><div class="scene-photo"><img id="heroSlideImage" src="Assets/aab9c7b21e03f52a5a46cc46d774e073.jpg" alt="CALLYROSE cream upholstered bed frame and mattress"></div><div class="scene-shade"></div>
@@ -73,17 +114,19 @@ footer{background:#302521;color:#f9eee5;padding:42px clamp(22px,7vw,100px);displ
 <div class="hero-caption"><small id="heroSlideKicker">THE BEDROOM EDIT</small><strong id="heroSlideTitle">Rest, beautifully.</strong></div><div class="hero-controls" aria-label="Choose featured collection"><button class="hero-dot" aria-label="Show bedroom" aria-current="true" data-slide="0"></button><button class="hero-dot" aria-label="Show mattress" aria-current="false" data-slide="1"></button><button class="hero-dot" aria-label="Show bed frame" aria-current="false" data-slide="2"></button><button class="hero-dot" aria-label="Show accent chair" aria-current="false" data-slide="3"></button></div><div class="hero-progress"><span id="heroProgress"></span></div><div class="float-note"><span class="note-dot"></span><div><small>The CALLYROSE feeling</small><strong id="heroNote">Make room for comfort.</strong></div></div>
 </div></div><div class="scroll-cue">Scroll to discover</div>
 </section>
-<div class="trust"><span>Thoughtful comfort</span><span>Made for everyday living</span><span>Beautiful spaces begin here</span></div>
-<section class="section" id="collections"><div class="section-head reveal"><div class="eyebrow">Find your feeling</div><h2>Spaces to settle into.</h2><p>Explore the world of CALLYROSE. Product listings will appear here as verified catalogue details and photography are added.</p></div>
+<div class="trust" aria-label="The CALLYROSE promise"><span>Thoughtful Comfort</span><span>Made for Everyday Living</span><span>Beautiful Spaces Begin Here</span></div>
+<section class="section" id="collections"><div class="section-head reveal"><div class="eyebrow">Find your feeling</div><h2>Spaces to settle into.</h2><p>Considered pieces for the moments that make a house feel like your own.</p></div>
 <div class="collections">
-<article class="collection reveal" data-collection="mattresses"><div class="collection-media"><img src="Assets/IMG_6dc43397-c403-4068-8713-2d00e0f212f1.jpg" alt="CALLYROSE mattress collection" loading="lazy"></div><div class="collection-label"><small>Rest beautifully · The sleep edit</small><h3>Mattresses</h3><p>Find the mattress that makes coming home feel even better.</p></div></article>
-<article class="collection reveal" data-collection="bedframes"><div class="collection-media"><img src="Assets/aab9c7b21e03f52a5a46cc46d774e073.jpg" alt="CALLYROSE cream upholstered bed frame" loading="lazy"></div><div class="collection-label"><small>Live beautifully · The bedroom edit</small><h3>Bed frames</h3><p>Discover beautiful frames that give your bedroom its character.</p></div></article>
-<article class="collection reveal" data-collection="chairs"><div class="collection-media"><img src="Assets/607a9c242539cc28391324f145830aab.jpg" alt="CALLYROSE cream accent chair" loading="lazy"></div><div class="collection-label"><small>Make it yours · The living edit</small><h3>Accent chairs</h3><p>Bring a softer, more considered touch to your favourite corner.</p></div></article>
+<article class="collection reveal" data-collection="mattresses"><div class="collection-media"><img src="Assets/IMG_6dc43397-c403-4068-8713-2d00e0f212f1.jpg" alt="CALLYROSE mattress collection" loading="lazy"></div><div class="collection-label"><small>Rest beautifully · The sleep edit</small><h3>Mattresses</h3><p>Find the mattress that makes coming home feel better.</p><span class="collection-cta">Coming Soon <b aria-hidden="true">↗</b></span></div></article>
+<article class="collection reveal" data-collection="bedframes"><div class="collection-media"><img src="Assets/aab9c7b21e03f52a5a46cc46d774e073.jpg" alt="CALLYROSE cream upholstered bed frame" loading="lazy"></div><div class="collection-label"><small>Live beautifully · The bedroom edit</small><h3>Bed frames</h3><p>Frames that give your bedroom character.</p><span class="collection-cta">Coming Soon <b aria-hidden="true">↗</b></span></div></article>
+<article class="collection reveal" data-collection="chairs"><div class="collection-media"><img src="Assets/607a9c242539cc28391324f145830aab.jpg" alt="CALLYROSE cream accent chair" loading="lazy"></div><div class="collection-label"><small>Make it yours · The living edit</small><h3>Accent chairs</h3><p>Softer corners for everyday living.</p><span class="collection-cta">Coming Soon <b aria-hidden="true">↗</b></span></div></article>
 </div></section>
 <section class="size-band" id="sizes"><div class="eyebrow">Find your fit</div><h2>Comfort comes in every size.</h2><p>Explore mattress sizes when browsing the CALLYROSE collection.</p><div class="sizes"><span class="size-chip">Single</span><span class="size-chip">Double</span><span class="size-chip">4 × 6</span><span class="size-chip">5 × 6</span><span class="size-chip">6 × 6</span><span class="size-chip">Family</span><span class="size-chip">Queen</span><span class="size-chip">King</span></div></section>
-<section class="section story" id="story"><div class="reveal"><div class="eyebrow">The CALLYROSE feeling</div><h2>Live comfortably.<br><em>Sleep beautifully.</em></h2><p>We believe the spaces we live in should help us feel our best. CALLYROSE brings together bedroom comfort and home furnishings with care, so you can make every day feel a little more like home.</p><a class="underlink" href="#collections">Explore our world</a></div></section>
+<section class="section story" id="story"><div class="story-inner reveal"><div class="eyebrow">The CALLYROSE Feeling</div><h2>Live comfortably.<br><em>Sleep beautifully.</em></h2><p>Home is more than the rooms we return to. It is the feeling of being at ease, the quiet moments that restore us, and the spaces that let us be ourselves.</p><p>CALLYROSE exists to celebrate that feeling through bedroom comfort and thoughtful home furnishings.</p><p>From the way a room comes together to the details that make a space feel personal, we believe comfort and beauty belong in everyday life.</p><p>Our point of view is simple: create a home that feels as good as it looks.</p><a class="button story-button" href="#collections">Explore the CALLYROSE world <span aria-hidden="true">↗</span></a></div></section>
+<section class="section why" id="why"><div class="section-head reveal"><div class="eyebrow">A feeling in every detail</div><h2>Why CALLYROSE.</h2><p>Because the things around you should make everyday living feel more considered.</p></div><div class="benefits"><article class="benefit reveal"><span class="benefit-number">01</span><h3>Everyday comfort</h3><p>Thoughtful pieces chosen with real daily living in mind.</p></article><article class="benefit reveal"><span class="benefit-number">02</span><h3>Considered details</h3><p>Materials, textures and finishes that feel good to live with.</p></article><article class="benefit reveal"><span class="benefit-number">03</span><h3>Beautiful spaces</h3><p>Design-led touches that bring warmth and character to a room.</p></article><article class="benefit reveal"><span class="benefit-number">04</span><h3>A sense of home</h3><p>Comfort that makes the everyday feel a little more special.</p></article></div></section>
+<section class="closing"><div class="closing-inner reveal"><div class="eyebrow">Come home to CALLYROSE</div><h2>Make room for<br><em>the good things.</em></h2><p>Discover a more thoughtful approach to comfort, rest and the spaces you call home.</p><a class="button closing-button" href="#collections">Explore collections <span aria-hidden="true">↗</span></a></div></section>
 </main>
-<footer><a class="brand" href="./"><span class="brand-mark">C</span><span class="brand-word">CALLY<span>ROSE</span></span></a><small>© <span id="year"></span> CALLYROSE. ALL RIGHTS RESERVED. &nbsp; <a href="./terms.html">TERMS</a> &nbsp; <a href="./privacy.html">PRIVACY</a></small></footer>
+<footer id="contact"><div class="footer-main"><a class="brand" href="./"><span class="brand-mark">C</span><span class="brand-word">CALLY<span>ROSE</span></span></a><p>Thoughtful comfort. Beautiful living.</p></div><div class="footer-links"><a href="#story">Our Story</a><a href="#collections">Collections</a><a href="#contact">Contact</a></div><div class="footer-meta"><small>© <span id="year"></span> CALLYROSE. ALL RIGHTS RESERVED.</small><small><a href="./terms.html">TERMS</a> &nbsp; <a href="./privacy.html">PRIVACY</a></small></div></footer>
 <script>
 (function(){document.getElementById('year').textContent=new Date().getFullYear();var items=document.querySelectorAll('.reveal');
 var slides=[
