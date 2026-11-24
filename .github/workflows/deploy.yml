@@ -37,6 +37,7 @@ jobs:
           cp settings.html _site/settings.html
           cp cart.html _site/cart.html
           cp checkout.html _site/checkout.html
+          cp payment-callback.html _site/payment-callback.html
           cp admin.html _site/admin.html
           cp staff.html _site/staff.html
           cp forgot-password.html _site/forgot-password.html
