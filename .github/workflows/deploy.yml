@@ -29,6 +29,10 @@ jobs:
           cp dashboard.html _site/dashboard.html
           cp product.html _site/product.html
           cp orders.html _site/orders.html
+          cp profile.html _site/profile.html
+          cp transactions.html _site/transactions.html
+          cp saved.html _site/saved.html
+          cp settings.html _site/settings.html
           cp cart.html _site/cart.html
           cp checkout.html _site/checkout.html
           cp forgot-password.html _site/forgot-password.html
