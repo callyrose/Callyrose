@@ -204,7 +204,21 @@ form.addEventListener("submit", async (event) => {
 
     if (error) throw error;
 
-    if (data.session) {
+    let activeSession = data.session;
+
+    // If Supabase returns no session, try a direct password sign-in.
+    // This supports projects where email confirmation has been disabled.
+    if (!activeSession) {
+      const signInResult = await supabase.auth.signInWithPassword({ email, password });
+      if (!signInResult.error) activeSession = signInResult.data.session;
+      else if (signInResult.error.message?.toLowerCase().includes("email not confirmed")) {
+        throw new Error("Supabase is still requiring email confirmation for this project. Please check Authentication → Providers → Email and make sure Confirm Email is OFF for the CALLYROSE project.");
+      } else {
+        throw signInResult.error;
+      }
+    }
+
+    if (activeSession) {
       showMessage("Your CALLYROSE account is ready. Taking you to My CALLYROSE…", "success");
       buttonText.textContent = "Opening My CALLYROSE…";
       const category = new URLSearchParams(location.search).get("category");
@@ -214,7 +228,7 @@ form.addEventListener("submit", async (event) => {
       return;
     }
 
-    showMessage("Your account details have been submitted. Please check your email to complete verification, then sign in to continue to My CALLYROSE.", "info");
+    throw new Error("Your account was created, but Supabase did not start a sign-in session. Please try signing in.");
   } catch (error) {
     const text = error?.message || "We couldn't create your account just now. Please try again.";
     showMessage(text, "error");
