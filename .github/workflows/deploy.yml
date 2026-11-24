@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html _site/index.html
-          if [ -d Assets ]; then cp -R Assets _site/assets; fi
+          if [ -d Assets ]; then cp -R Assets _site/Assets; fi
           if [ -d assets ]; then cp -R assets _site/assets; fi
           if [ -d images ]; then cp -R images _site/images; fi
       - name: Upload GitHub Pages artifact
