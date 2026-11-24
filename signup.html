@@ -219,12 +219,13 @@ form.addEventListener("submit", async (event) => {
     }
 
     if (activeSession) {
-      showMessage("Your CALLYROSE account is ready. Taking you to My CALLYROSE…", "success");
-      buttonText.textContent = "Opening My CALLYROSE…";
+      showMessage("Your CALLYROSE account has been created.", "success");
+      buttonText.textContent = "Account created";
+      sessionStorage.setItem("callyrose_welcome_transition", "created");
       const category = new URLSearchParams(location.search).get("category");
       const destination = new URL("./dashboard.html", location.href);
       if (["mattresses", "bedframes", "chairs"].includes(category)) destination.searchParams.set("category", category);
-      window.location.replace(destination.toString());
+      window.setTimeout(() => window.location.replace(destination.toString()), 1100);
       return;
     }
 
