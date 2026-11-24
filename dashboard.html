@@ -70,5 +70,6 @@ function playCallyroseWelcome(){
   window.setTimeout(()=>overlay.classList.add("open"),5200);
   window.setTimeout(()=>{overlay.hidden=true;},7850);
 }
+playCallyroseWelcome();
 document.getElementById("signOut").addEventListener("click",async()=>{const b=document.getElementById("signOut");b.disabled=true;b.textContent="Signing out…";const {error}=await supabase.auth.signOut();if(error){b.disabled=false;b.textContent="Sign out ↗";alert("We couldn't sign you out. Please try again.");return;}location.replace("./");});
 </script></body></html>
