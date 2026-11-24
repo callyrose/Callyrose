@@ -128,7 +128,23 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 const form = document.getElementById("signupForm");
 const button = document.getElementById("submitButton");
 const buttonText = document.getElementById("buttonText");
-const message = document.getElementById("formMessage");\nconst strengthBar = document.getElementById("strengthBar");\nconst strengthLabel = document.getElementById("strengthLabel");\nconst passwordInput = document.getElementById("password");\npasswordInput.addEventListener("input", () => {\n  const value = passwordInput.value;\n  let score = 0;\n  if (value.length >= 8) score++;\n  if (value.length >= 12) score++;\n  if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;\n  if (/\\d/.test(value)) score++;\n  if (/[^A-Za-z0-9]/.test(value)) score++;\n  const labels = ["Password strength", "Weak password", "Fair password", "Good password", "Strong password", "Excellent password"];\n  strengthBar.style.width = (score * 20) + "%";\n  strengthBar.style.background = score < 2 ? "#b94a48" : score < 4 ? "#c8a47c" : "#6f9275";\n  strengthLabel.textContent = labels[score];\n});
+const message = document.getElementById("formMessage");
+const strengthBar = document.getElementById("strengthBar");
+const strengthLabel = document.getElementById("strengthLabel");
+const passwordInput = document.getElementById("password");
+passwordInput.addEventListener("input", () => {
+  const value = passwordInput.value;
+  let score = 0;
+  if (value.length >= 8) score++;
+  if (value.length >= 12) score++;
+  if (/[A-Z]/.test(value) && /[a-z]/.test(value)) score++;
+  if (/\\d/.test(value)) score++;
+  if (/[^A-Za-z0-9]/.test(value)) score++;
+  const labels = ["Password strength", "Weak password", "Fair password", "Good password", "Strong password", "Excellent password"];
+  strengthBar.style.width = (score * 20) + "%";
+  strengthBar.style.background = score < 2 ? "#b94a48" : score < 4 ? "#c8a47c" : "#6f9275";
+  strengthLabel.textContent = labels[score];
+});
 
 function showMessage(text, type = "info") {
   message.textContent = text;
